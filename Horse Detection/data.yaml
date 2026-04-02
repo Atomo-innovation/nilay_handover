@@ -1,0 +1,12 @@
+train: "/kaggle/input/datasets/nilaypurohit01/horse-detection/train/images"
+val: "/kaggle/input/datasets/nilaypurohit01/horse-detection/train/images"
+test: /kaggle/input/datasets/nilaypurohit01/horse-detection/test/images"
+nc: 1
+names: ['horse']
+
+roboflow:
+  workspace: nilayroboflow
+  project: horse_detection-dljq7
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/nilayroboflow/horse_detection-dljq7/dataset/2
