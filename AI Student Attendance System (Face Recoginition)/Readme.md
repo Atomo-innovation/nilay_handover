@@ -1,288 +1,209 @@
-📦 1. System Requirements
-💻 Software Requirements
-Component	Version
-Python	3.9.25
-pip	26.0.1
-OS	Windows 10 / 11 (Recommended)
-📚 2. Python Libraries (Requirements.txt)
+# 🎓 AI Student Attendance System (Face Recognition)
 
-Below is your clean and usable requirements.txt (only important packages, no unnecessary ones):
+---
 
-✅ 🔹 Core AI & Vision
-opencv-python==4.13.0.92
-opencv-contrib-python==4.13.0.92
-deepface==0.0.98
-tensorflow==2.20.0
-keras==3.10.0
-mtcnn==0.1.1
-retina-face==0.0.17
-✅ 🔹 Data Processing
-numpy==2.0.2
-pandas==2.3.3
-scikit-learn==1.6.1
-scipy==1.13.1
-✅ 🔹 Visualization & UI
-streamlit==1.50.0
-matplotlib==3.9.4
-✅ 🔹 Backend & Utility
-pickle-mixin==1.0.2
-python-dateutil==2.9.0.post0
-pytz==2025.2
-✅ 🔹 Optional (Performance / Support)
-onnxruntime==1.19.2
-mediapipe==0.10.32
-⚠️ Important Note (VERY IMPORTANT ⚡)
+## 📌 Project Overview
 
-👉 Do NOT install all 100+ packages from pip list
-👉 Only install required ones (above)
+The **AI Student Attendance System** is a real-time face recognition-based application designed to automate attendance marking using computer vision and deep learning techniques.
 
-📄 3. Final Requirements.txt (Ready to Copy)
+This system replaces traditional manual attendance methods with an intelligent, secure, and efficient solution using facial recognition.
 
-Just paste this 👇
+---
 
-opencv-python==4.13.0.92
-opencv-contrib-python==4.13.0.92
-deepface==0.0.98
-tensorflow==2.20.0
-keras==3.10.0
-mtcnn==0.1.1
-retina-face==0.0.17
-numpy==2.0.2
-pandas==2.3.3
-scikit-learn==1.6.1
-scipy==1.13.1
-streamlit==1.50.0
-matplotlib==3.9.4
-onnxruntime==1.19.2
-mediapipe==0.10.32
-python-dateutil==2.9.0.post0
-pytz==2025.2
-⚙️ 4. Installation Commands
-🔹 Step 1: Create Virtual Environment
+## 🚀 Features
+
+* ✅ Real-time face recognition
+* ✅ Student face registration system
+* ✅ Automatic attendance marking
+* ✅ Streamlit-based dashboard UI
+* ✅ CCTV (RTSP) camera support
+* ✅ Night vision enhancement
+* ✅ Anti-spoof (liveness) detection
+* ✅ Attendance analytics & reports
+* ✅ Multiple embeddings for higher accuracy
+
+---
+
+## ⚙️ System Requirements
+
+### 💻 Software Requirements
+
+| Component | Version         |
+| --------- | --------------- |
+| Python    | 3.9.25          |
+| pip       | 26.0.1          |
+| OS        | Windows 10 / 11 |
+
+---
+
+## 📦 Installation
+
+### 🔹 Step 1: Clone Repository
+
+```bash
+git clone https://github.com/your-username/ai-attendance-system.git
+cd ai-attendance-system
+```
+
+---
+
+### 🔹 Step 2: Create Virtual Environment
+
+```bash
 python -m venv venv
-🔹 Step 2: Activate
+```
+
+---
+
+### 🔹 Step 3: Activate Environment
+
+```bash
 venv\Scripts\activate
-🔹 Step 3: Install Requirements
+```
+
+---
+
+### 🔹 Step 4: Install Dependencies
+
+```bash
 pip install -r requirements.txt
-🧠 5. Why These Libraries?
-Library	Why Used
-OpenCV	Camera + face detection
-DeepFace	Face recognition
-TensorFlow	Backend for DeepFace
-NumPy	Vector math
-Pandas	Attendance storage
-Streamlit	Dashboard UI
-Scikit-learn	Cosine similarity
-🚀 6. Optional Improvements (Advanced)
+```
 
-If you want better performance:
+---
 
-torch
-ultralytics
+## 📚 Requirements (requirements.txt)
 
-👉 For YOLO-based face detection upgrade
+```txt
+opencv-python==4.13.0.92
+opencv-contrib-python==4.13.0.92
+deepface==0.0.98
+tensorflow==2.20.0
+keras==3.10.0
+mtcnn==0.1.1
+retina-face==0.0.17
+numpy==2.0.2
+pandas==2.3.3
+scikit-learn==1.6.1
+scipy==1.13.1
+streamlit==1.50.0
+matplotlib==3.9.4
+onnxruntime==1.19.2
+mediapipe==0.10.32
+python-dateutil==2.9.0.post0
+pytz==2025.2
+```
 
+---
 
-🎓 AI Student Attendance System (Face Recognition)
-🧠 1. Project Overview
+## 🧠 Technologies Used
 
-This system automatically marks student attendance using face recognition instead of manual methods.
+| Technology         | Purpose                          |
+| ------------------ | -------------------------------- |
+| OpenCV             | Face detection & camera handling |
+| DeepFace (FaceNet) | Face recognition                 |
+| TensorFlow / Keras | Deep learning backend            |
+| NumPy              | Mathematical operations          |
+| Pandas             | Attendance data handling         |
+| Streamlit          | Web dashboard                    |
+| Scikit-learn       | Cosine similarity                |
 
-🔹 Core Flow:
-Register student face
-Convert face → embedding (AI vector)
-Store embedding
-Detect face in live camera
-Compare with stored embeddings
-Mark attendance if matched
-⚙️ 2. Technologies Used
-Component	Purpose
-OpenCV (cv2)	Camera + face detection
-DeepFace	Face recognition (FaceNet model)
-NumPy	Vector calculations
-Pandas	Attendance storage
-Streamlit	Web dashboard
-Pickle	Save embeddings
-Sklearn	Cosine similarity
-📂 3. File-wise Explanation (VERY IMPORTANT)
-🟢 3.1 register.py → Face Registration
-🎯 Purpose:
+---
 
-Register a student and store their face embedding.
+## 📂 Project Structure
 
-🔄 Process Flow:
-Open camera
-Detect face using Haar Cascade
-Crop face
-Convert face → embedding using DeepFace
-Save embedding in embeddings.pkl
-🧠 Key Concepts:
-🔹 Face Detection
-face_cascade.detectMultiScale(gray, 1.1, 5)
+```
+├── register.py
+├── main.py
+├── rtsp_fast_detection.py
+├── PRO_AI_ATTENDANCE_SYSTEM.py
+├── PRO_AI_ATTENDANCE_SYSTEM_SECURE.py
+├── embeddings.pkl
+├── attendance.csv
+├── requirements.txt
+└── README.md
+```
 
-Detects face region.
+---
 
-🔹 Face Embedding
-DeepFace.represent(...)
-Converts face → 128/512 vector
-This is the identity of the person
-🔹 Storage
-data[name] = embedding
+## 🔍 How It Works
 
-Saved as:
+1. Capture face from camera
+2. Detect face using OpenCV / RetinaFace
+3. Convert face into embedding using DeepFace (FaceNet)
+4. Store embeddings in database (pickle file)
+5. Compare real-time face with stored embeddings
+6. Mark attendance if matched
 
-{
-  "Nilay": [0.123, 0.567, ...]
-}
-✅ Output:
-File created: embeddings.pkl
-Student registered successfully
-🔵 3.2 main.py → Basic Recognition + Attendance
-🎯 Purpose:
+---
 
-Detect faces and mark attendance.
+## 📂 File Descriptions
 
-🔄 Process:
-Load embeddings
-Start camera
-Detect face
-Generate embedding
-Compare with stored embeddings
-Mark attendance
-🧠 Matching Logic:
-🔹 Cosine Similarity
-score = np.dot(a, b) / (|a| * |b|)
-Range: 0 to 1
-Closer to 1 = same person
-🔹 Threshold
-if best_score > 0.7:
+### 🟢 `register.py` – Face Registration
 
-0.7 → Match
+* Captures student face using webcam
+* Detects face using Haar Cascade
+* Converts face to embedding using DeepFace
+* Stores embedding in `embeddings.pkl`
 
-< 0.7 → Unknown
-📄 Attendance System:
-attendance.csv
-Name	Time
-Nilay	10:32:10
-⚡ Optimization:
-marked_today = set()
+---
 
-Prevents duplicate attendance.
+### 🔵 `main.py` – Basic Recognition
 
-🟡 3.3 rtsp_fast_detection.py → CCTV Detection
-🎯 Purpose:
+* Loads stored embeddings
+* Detects faces in real-time
+* Matches faces using cosine similarity
+* Marks attendance in `attendance.csv`
 
-Detect faces from IP camera (RTSP stream)
+---
 
-🔄 Flow:
-Connect to RTSP camera
-Use RetinaFace (DeepFace)
-Detect faces
-Draw bounding boxes
-🔥 Important:
-No recognition
-Only detection
-Faster + better for CCTV
-🟣 3.4 PRO_AI_ATTENDANCE_SYSTEM.py → Dashboard Version
+### 🟡 `rtsp_fast_detection.py` – CCTV Detection
 
-📄 File:
+* Connects to RTSP camera stream
+* Uses RetinaFace for detection
+* Displays detected faces
+* No recognition (only detection)
 
-🎯 Purpose:
+---
 
-Complete system with UI (Streamlit)
+### 🟣 `PRO_AI_ATTENDANCE_SYSTEM.py` – Dashboard
 
-🔥 Features:
+* Streamlit-based UI
+* Features:
 
-✔ Login system
-✔ Register users
-✔ Live recognition
-✔ Attendance table
-✔ Analytics (graphs)
-✔ Delete users
+  * Login system
+  * Registration
+  * Recognition
+  * Attendance view
+  * Analytics
+  * User management
 
-🧠 Important Modules:
-🔹 run_camera()
+---
 
-Main engine:
+### 🌙 Night Vision Version
 
-Detect face
-Extract embedding
-Register OR recognize
-🔹 find_match()
-Compares embeddings
-Uses cosine similarity
-Returns name + confidence
-🔹 mark_attendance()
-Saves:
-Name | Date | Time
-🔹 dashboard()
+* Enhances low-light images
+* Uses:
 
-Controls:
+  * CLAHE
+  * Gamma correction
+* Improves detection in dark environments
 
-Register
-Recognition
-Users
-Attendance
-Analytics
-🌙 3.5 Night Vision Version
+---
 
-📄 File:
+### 🔐 `PRO_AI_ATTENDANCE_SYSTEM_SECURE.py` – Secure System
 
-🎯 Purpose:
+* Advanced version with:
 
-Improve detection in low light
+  * Anti-spoof detection (eye detection)
+  * Multiple embeddings per user
+  * Higher accuracy threshold (0.82)
+  * Improved recognition performance
 
-🔥 Key Function:
-enhance_night_vision()
-🧠 Techniques Used:
-CLAHE (Contrast Enhancement)
-Gamma Correction
-Grayscale enhancement
-✅ Result:
+---
 
-Better face detection at night / dark areas
+## 📊 System Architecture
 
-🔐 3.6 Secure Version (Best Version 🚀)
-
-📄 File:
-
-🎯 Purpose:
-
-Add security + accuracy improvements
-
-🔥 Features:
-
-✔ Anti-spoof detection
-✔ Multiple embeddings per user
-✔ Higher threshold (0.82)
-✔ Better accuracy
-✔ Fake face prevention
-
-🧠 Important Concepts:
-🔹 1. Multiple Embeddings
-db[name].append(embedding)
-
-👉 Each user has MANY samples
-👉 Improves accuracy
-
-🔹 2. Liveness Detection
-eye_detector.detectMultiScale(...)
-
-✔ Real person → eyes detected
-❌ Photo → no eyes → blocked
-
-🔹 3. Strong Threshold
-if best_score > 0.82:
-
-👉 Reduces false matches
-
-🔹 4. Frame Skipping
-if frame_count % 5 == 0:
-
-👉 Avoids duplicate embeddings
-👉 Faster processing
-
-📊 4. System Architecture
+```
 Camera Input
      ↓
 Face Detection (OpenCV / RetinaFace)
@@ -293,54 +214,110 @@ DeepFace (FaceNet)
      ↓
 Embedding Vector
      ↓
-Compare with Database
+Comparison (Cosine Similarity)
      ↓
 Match / Unknown
      ↓
 Attendance Stored (CSV)
      ↓
 Dashboard (Streamlit)
-📁 5. Data Files
-📌 embeddings.pkl
+```
 
-Stores:
+---
 
+## 📁 Data Files
+
+### 📌 `embeddings.pkl`
+
+Stores face embeddings:
+
+```
 { name : [embedding vectors] }
-📌 attendance.csv
+```
 
-Stores:
+---
 
-Name | Date | Time
-🚀 6. Key Strengths of Your Project
+### 📌 `attendance.csv`
 
-🔥 Real-time recognition
-🔥 Works with webcam + CCTV
-🔥 Dashboard UI
-🔥 Night vision support
-🔥 Anti-spoof security
-🔥 Analytics system
-🔥 Multiple embeddings (high accuracy)
+Stores attendance records:
 
-⚠️ 7. Limitations
-Haar cascade is not very accurate
-Lighting affects performance
-Threshold tuning needed
-Single camera scalability
-💡 8. Future Improvements
+| Name | Date | Time |
+| ---- | ---- | ---- |
 
-👉 Use YOLOv8 face detection
-👉 Add database (MySQL)
-👉 Add mask detection
-👉 Add multi-camera tracking
-👉 Use ArcFace (better than FaceNet)
+---
 
-🏁 Final Summary
+## ▶️ Usage
 
-Your system is:
+### 🔹 Register Student
 
-👉 AI-based biometric attendance system
-👉 Uses DeepFace (FaceNet) for recognition
-👉 Uses cosine similarity for matching
-👉 Stores embeddings in pickle file
-👉 Provides full UI using Streamlit dashboard
-👉 Includes security + night vision + CCTV support
+```bash
+python register.py
+```
+
+---
+
+### 🔹 Run Recognition
+
+```bash
+python main.py
+```
+
+---
+
+### 🔹 Run Dashboard
+
+```bash
+streamlit run PRO_AI_ATTENDANCE_SYSTEM.py
+```
+
+---
+
+### 🔹 Run Secure System
+
+```bash
+streamlit run PRO_AI_ATTENDANCE_SYSTEM_SECURE.py
+```
+
+---
+
+## 🚀 Key Advantages
+
+* Real-time processing
+* High accuracy with FaceNet
+* Secure (anti-spoof detection)
+* Works with webcam & CCTV
+* User-friendly dashboard
+* Scalable architecture
+
+---
+
+## ⚠️ Limitations
+
+* Haar Cascade is less accurate than modern detectors
+* Performance depends on lighting conditions
+* Requires threshold tuning
+* Limited multi-camera scalability
+
+---
+
+## 🔮 Future Improvements
+
+* Integrate YOLOv8 for face detection
+* Add database (MySQL / Firebase)
+* Multi-camera tracking
+* Mask detection integration
+* Upgrade to ArcFace model
+
+---
+
+## 👨‍💻 Author
+
+**Nilay Purohit**
+
+---
+
+## 📌 License
+
+This project is for educational and research purposes.
+
+---
